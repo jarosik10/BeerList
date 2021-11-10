@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useBeers } from '../../hooks/useBeers';
+import { useFavouriteBeers } from '../../hooks/useFavouriteBeers';
 import HeartButton from '../HeartButton';
 
 const Wrapper = styled.div`
@@ -57,7 +57,7 @@ export interface BeerProps {
 
 const Beer: FunctionComponent<BeerProps> = ({id, name, abv, image_url: imagerUrl}) => {
   const [isFavourite, setIsFavourite] = React.useState(false);
-  const {addBeerToFavourites, removeBeerFromFavourites} = useBeers();
+  const {addBeerToFavourites, removeBeerFromFavourites} = useFavouriteBeers();
   
   const toggleFavourite = () => {
     if (isFavourite) {

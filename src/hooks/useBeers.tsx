@@ -3,12 +3,9 @@ import { BeerProps } from '../components/Beer';
 
 interface ContextValue {
   beers: BeerProps[];
-  favouriteBeers: number[];
   page: number;
   isLoading: boolean;
   loadNextPage: () => void;
-  addBeerToFavourites: (id: number) => void;
-  removeBeerFromFavourites: (id: number) => void;
 }
 
 export const BeersContext = React.createContext({} as ContextValue);
@@ -19,20 +16,11 @@ const fetchBeers = async(page: number) => {
 
 export const BearsProvider: FunctionComponent = ({children}) => {
   const [beers, setBeers] = React.useState<BeerProps[]>([]);
-  const [favouriteBeers, setFavouriteBeers] = React.useState<number[]>([]);
   const [page, setPage] = React.useState(1);
   const [isLoading, setIsLoading] = React.useState(false);
 
   const loadNextPage = () => {
     setPage(prevPage => prevPage + 1)
-  }
-
-  const addBeerToFavourites = (id: number) => {
-    setFavouriteBeers(prevState => [...prevState, id]);
-  }
-
-  const removeBeerFromFavourites = (id: number) => {
-    setFavouriteBeers(favouriteBeers.filter((i) => i !== id));
   }
 
   React.useEffect(() => {
@@ -49,12 +37,9 @@ export const BearsProvider: FunctionComponent = ({children}) => {
     <BeersContext.Provider
       value={{
         beers,
-        favouriteBeers,
         page,
         isLoading,
         loadNextPage,
-        addBeerToFavourites,
-        removeBeerFromFavourites
       }}
     >
       {children}
