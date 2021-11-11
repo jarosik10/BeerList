@@ -14,7 +14,7 @@ const fetchBeers = async(page: number) => {
   return fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=16`)
 }
 
-export const BearsProvider: FunctionComponent = ({children}) => {
+export const BeersProvider: FunctionComponent = ({children}) => {
   const [beers, setBeers] = React.useState<BeerProps[]>([]);
   const [page, setPage] = React.useState(1);
   const [isLoading, setIsLoading] = React.useState(false);
