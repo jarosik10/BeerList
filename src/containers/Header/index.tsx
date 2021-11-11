@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import Button from '../../components/Button';
 import Title from '../../components/Title';
+import { useFavouriteBeers } from '../../hooks/useFavouriteBeers';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -12,8 +14,10 @@ const StyledHeader = styled.header`
 `;
 
 const Header: FunctionComponent = () => {
+  const { openFavouriteBeersSidebar } = useFavouriteBeers();
   return <StyledHeader>
     <Title>My beer list</Title>
+    <Button onClick={openFavouriteBeersSidebar}>Show my favs</Button>
   </StyledHeader>
 }
 

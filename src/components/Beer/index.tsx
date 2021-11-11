@@ -56,16 +56,14 @@ export interface BeerProps {
 }
 
 const Beer: FunctionComponent<BeerProps> = ({id, name, abv, image_url: imagerUrl}) => {
-  const [isFavourite, setIsFavourite] = React.useState(false);
-  const {addBeerToFavourites, removeBeerFromFavourites} = useFavouriteBeers();
-  
+  const {addBeerToFavourites, removeBeerFromFavourites, favouriteBeers} = useFavouriteBeers();
+  const isFavourite = favouriteBeers.includes(id);
+
   const toggleFavourite = () => {
     if (isFavourite) {
       removeBeerFromFavourites(id);
-      setIsFavourite(false);
     } else {
       addBeerToFavourites(id);
-      setIsFavourite(true);
     }
   }
 
