@@ -5,6 +5,8 @@ import Title from '../../components/Title';
 import { useFavouriteBeers } from '../../hooks/useFavouriteBeers';
 
 const StyledHeader = styled.header`
+  position: sticky;
+  z-index: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;

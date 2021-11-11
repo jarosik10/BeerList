@@ -29,7 +29,7 @@ const BeerAbv = styled.div`
   font-size: 24px;
   text-shadow: 0 0 4px #000000;
   color: #ffffff;
-  background-color: ${({ abv }: { abv: number }) => abv > 6 ? '#ff0000' : abv > 3 ? '#eef300' : '38ff06'};
+  background-color: ${({ abv }: { abv: number }) => abv > 6 ? '#ff0000' : abv > 3 ? '#eef300' : '#38ff06'};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   max-width: 400px;
   background-color: #ffffff;
   border-left: 4px solid #000000;
-  z-index: 90;
+  z-index: 110;
 `;
 
 const StyledButton = styled(Button)`

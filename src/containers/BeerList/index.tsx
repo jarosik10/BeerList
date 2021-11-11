@@ -6,7 +6,8 @@ import Spinner from '../../components/Spinner';
 import { useBeers } from '../../hooks/useBeers';
 
 const Wrapper = styled.div`
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
+  overflow-y: auto;
   position: relative;
   display: flex;
   flex-direction: column;
